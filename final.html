@@ -1,0 +1,2871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICSE Class 10 Chemistry: Strategic Analysis 2017-2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tiempos+Headline:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+/* === ROOT VARIABLES & BASE STYLES === */
+:root {
+    --space-dark: #0a0f24;
+    --space-purple: #301860;
+    --neon-cyan: #00eaff;
+    --neon-green: #39ff14;
+    --neon-magenta: #ff2df2;
+    --neon-blue: #0066ff;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.8);
+    --primary-blue: #4361ee;
+    --secondary-purple: #7209b7;
+    --accent-cyan: #4cc9f0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    line-height: 1.7;
+    background: linear-gradient(135deg, var(--space-dark) 0%, var(--space-purple) 100%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.font-tiempos {
+    font-family: 'Tiempos Headline', serif;
+}
+
+/* === FLOATING PARTICLES BACKGROUND === */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(0, 234, 255, 0.15) 0%, transparent 2%),
+        radial-gradient(circle at 80% 70%, rgba(57, 255, 20, 0.1) 0%, transparent 2%),
+        radial-gradient(circle at 40% 80%, rgba(255, 45, 242, 0.1) 0%, transparent 2%),
+        radial-gradient(circle at 60% 20%, rgba(0, 102, 255, 0.1) 0%, transparent 2%);
+    background-size: 400px 400px;
+    z-index: -1;
+    animation: floatParticles 20s infinite linear;
+}
+
+@keyframes floatParticles {
+    0% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-20px) translateX(10px); }
+    100% { transform: translateY(0) translateX(0); }
+}
+
+/* === GLASSMORPHISM CONTAINERS === */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* === PAGE TRANSITIONS & ANIMATIONS === */
+.content-offset {
+    margin-left: 280px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === NAVBAR STYLING === */
+.toc-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 280px;
+    background: rgba(10, 15, 36, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(0, 234, 255, 0.2);
+    z-index: 50;
+    overflow-y: auto;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 0 30px rgba(0, 234, 255, 0.1);
+}
+
+.toc-fixed h3 {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.toc-fixed h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--neon-cyan);
+    box-shadow: 0 0 8px var(--neon-cyan);
+}
+
+.toc-fixed ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc-fixed li {
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.toc-fixed li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: var(--neon-magenta);
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.toc-fixed a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.toc-fixed a:hover {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px rgba(0, 234, 255, 0.7);
+    transform: translateX(5px);
+}
+
+.toc-fixed a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--neon-cyan);
+    box-shadow: 0 0 8px var(--neon-cyan);
+}
+
+.toc-fixed a.text-blue-600 {
+    color: var(--neon-cyan) !important;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(0, 234, 255, 0.7);
+}
+
+/* Key Insights Section */
+.toc-fixed .mt-8 {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.toc-fixed h4 {
+    color: var(--neon-green);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.toc-fixed .space-y-3 > div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+}
+
+.toc-fixed .space-y-3 .bg-blue-600 {
+    background: var(--neon-cyan) !important;
+    box-shadow: 0 0 6px var(--neon-cyan);
+}
+
+.toc-fixed .space-y-3 .bg-amber-500 {
+    background: var(--neon-green) !important;
+    box-shadow: 0 0 6px var(--neon-green);
+}
+
+/* === HERO SECTION === */
+.relative.min-h-screen {
+    background: none !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.relative.min-h-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(0, 234, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 45, 242, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(57, 255, 20, 0.1) 0%, transparent 50%);
+    z-index: -1;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.hero-overlay {
+    background: linear-gradient(135deg, rgba(10, 15, 36, 0.9) 0%, rgba(48, 24, 96, 0.8) 100%) !important;
+    border-radius: 16px;
+    box-shadow: 0 0 40px rgba(0, 234, 255, 0.2);
+}
+
+.relative.min-h-screen img {
+    border-radius: 16px;
+    filter: brightness(0.8) contrast(1.2);
+    box-shadow: 0 0 30px rgba(0, 234, 255, 0.3);
+}
+
+.relative.min-h-screen .relative.z-10 h1 {
+    color: white;
+    text-shadow: 0 0 15px rgba(0, 234, 255, 0.7);
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.relative.min-h-screen .relative.z-10 p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.25rem;
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+}
+
+/* Executive Summary Card */
+.bg-white.rounded-xl {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    color: var(--text-primary);
+}
+
+.bg-white.rounded-xl h2 {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.bg-white.rounded-xl h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--neon-cyan);
+    box-shadow: 0 0 8px var(--neon-cyan);
+}
+
+.bg-white.rounded-xl p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.insight-highlight {
+    background: linear-gradient(90deg, rgba(0, 234, 255, 0.15) 0%, transparent 100%);
+    border-left: 3px solid var(--neon-cyan);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 0 20px rgba(0, 234, 255, 0.1);
+}
+
+.insight-highlight h3 {
+    color: var(--neon-cyan);
+    margin-bottom: 0.75rem;
+    text-shadow: 0 0 8px rgba(0, 234, 255, 0.5);
+}
+
+.insight-highlight p, .insight-highlight li {
+    color: var(--text-secondary);
+}
+
+/* === SIDEBAR INSIGHTS === */
+.space-y-6 > div {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    color: var(--text-primary);
+    padding: 1.5rem;
+}
+
+.space-y-6 h3 {
+    color: var(--neon-green);
+    text-shadow: 0 0 8px rgba(57, 255, 20, 0.5);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.space-y-6 .flex.items-start {
+    margin-bottom: 1rem;
+}
+
+.space-y-6 .w-8.h-8 {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.space-y-6 .bg-blue-100 {
+    background: rgba(0, 234, 255, 0.2) !important;
+    box-shadow: 0 0 10px rgba(0, 234, 255, 0.3);
+}
+
+.space-y-6 .bg-amber-100 {
+    background: rgba(255, 165, 0, 0.2) !important;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
+}
+
+.space-y-6 .bg-green-100 {
+    background: rgba(57, 255, 20, 0.2) !important;
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+}
+
+.space-y-6 .text-blue-600 {
+    color: var(--neon-cyan) !important;
+}
+
+.space-y-6 .text-amber-600 {
+    color: #ffa500 !important;
+}
+
+.space-y-6 .text-green-600 {
+    color: var(--neon-green) !important;
+}
+
+.space-y-6 h4 {
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.space-y-6 p.text-sm {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Research Methodology Card */
+.bg-gradient-to-br.from-blue-50.to-indigo-50 {
+    background: linear-gradient(135deg, rgba(0, 234, 255, 0.1) 0%, rgba(255, 45, 242, 0.1) 100%) !important;
+    border: 1px solid rgba(0, 234, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 234, 255, 0.2);
+}
+
+.bg-gradient-to-br.from-blue-50.to-indigo-50 h3 {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px rgba(0, 234, 255, 0.5);
+}
+
+.bg-gradient-to-br.from-blue-50.to-indigo-50 p {
+    color: var(--text-secondary);
+}
+
+.citation-link {
+    color: var(--neon-cyan) !important;
+    text-decoration: none;
+    border-bottom: 1px dotted var(--neon-cyan);
+    transition: all 0.3s ease;
+}
+
+.citation-link:hover {
+    background-color: rgba(0, 234, 255, 0.1);
+    border-bottom-style: solid;
+    text-shadow: 0 0 8px rgba(0, 234, 255, 0.7);
+}
+
+/* === CONSOLIDATED ANALYSIS SECTION === */
+#consolidated-analysis {
+    background: none !important;
+}
+
+#consolidated-analysis h2 {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 15px rgba(0, 234, 255, 0.7);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+#consolidated-analysis h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--neon-cyan);
+    box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.grid.lg\\:grid-cols-3.gap-8 > div {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.grid.lg\\:grid-cols-3.gap-8 > div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.grid.lg\\:grid-cols-3.gap-8 > div:hover::before {
+    left: 100%;
+}
+
+.grid.lg\\:grid-cols-3.gap-8 > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 234, 255, 0.2);
+}
+
+.bg-red-50 {
+    background: rgba(255, 0, 0, 0.1) !important;
+    border: 1px solid rgba(255, 0, 0, 0.2) !important;
+}
+
+.bg-yellow-50 {
+    background: rgba(255, 255, 0, 0.1) !important;
+    border: 1px solid rgba(255, 255, 0, 0.2) !important;
+}
+
+.bg-green-50 {
+    background: rgba(0, 255, 0, 0.1) !important;
+    border: 1px solid rgba(0, 255, 0, 0.2) !important;
+}
+
+.grid.lg\\:grid-cols-3.gap-8 h3 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.grid.lg\\:grid-cols-3.gap-8 .space-y-3 > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.grid.lg\\:grid-cols-3.gap-8 .space-y-3 > div:last-child {
+    border-bottom: none;
+}
+
+.grid.lg\\:grid-cols-3.gap-8 .font-medium {
+    color: var(--text-primary);
+}
+
+.grid.lg\\:grid-cols-3.gap-8 .font-bold {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px rgba(0, 234, 255, 0.7);
+}
+
+/* === HIGH-PRIORITY CHAPTERS SECTION === */
+#high-priority {
+    background: none !important;
+}
+
+#high-priority h2 {
+    color: var(--neon-green);
+    text-shadow: 0 0 15px rgba(57, 255, 20, 0.7);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+#high-priority h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--neon-green);
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
+.space-y-12 > div {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.space-y-12 > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 234, 255, 0.2);
+}
+
+.flex.items-start.space-x-6 .w-16.h-16 {
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 0 15px rgba(0, 234, 255, 0.3);
+}
+
+.bg-red-100 {
+    background: rgba(255, 0, 0, 0.2) !important;
+}
+
+.bg-orange-100 {
+    background: rgba(255, 165, 0, 0.2) !important;
+}
+
+.bg-blue-100 {
+    background: rgba(0, 102, 255, 0.2) !important;
+}
+
+.bg-purple-100 {
+    background: rgba(128, 0, 128, 0.2) !important;
+}
+
+.text-red-600 {
+    color: #ff4444 !important;
+    text-shadow: 0 0 8px rgba(255, 68, 68, 0.7);
+}
+
+.text-orange-600 {
+    color: #ffa500 !important;
+    text-shadow: 0 0 8px rgba(255, 165, 0, 0.7);
+}
+
+.text-blue-600 {
+    color: var(--neon-blue) !important;
+    text-shadow: 0 0 8px rgba(0, 102, 255, 0.7);
+}
+
+.text-purple-600 {
+    color: #aa00ff !important;
+    text-shadow: 0 0 8px rgba(170, 0, 255, 0.7);
+}
+
+.flex.items-start.space-x-6 h3 {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.flex.items-center.space-x-4 .bg-red-100 {
+    background: rgba(255, 0, 0, 0.2) !important;
+    color: #ff4444;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+.flex.items-center.space-x-4 .bg-orange-100 {
+    background: rgba(255, 165, 0, 0.2) !important;
+    color: #ffa500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
+}
+
+.flex.items-center.space-x-4 .bg-blue-100 {
+    background: rgba(0, 102, 255, 0.2) !important;
+    color: var(--neon-blue);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 102, 255, 0.3);
+}
+
+.flex.items-center.space-x-4 .bg-purple-100 {
+    background: rgba(128, 0, 128, 0.2) !important;
+    color: #aa00ff;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(128, 0, 128, 0.3);
+}
+
+.flex.items-center.space-x-4 .text-gray-500 {
+    color: var(--text-secondary) !important;
+}
+
+.flex.items-start.space-x-6 p.text-gray-700 {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+/* === MEDIUM-PRIORITY CHAPTERS SECTION === */
+#medium-priority {
+    background: none !important;
+}
+
+#medium-priority h2 {
+    color: var(--neon-magenta);
+    text-shadow: 0 0 15px rgba(255, 45, 242, 0.7);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+#medium-priority h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--neon-magenta);
+    box-shadow: 0 0 10px var(--neon-magenta);
+}
+
+.grid.md\\:grid-cols-2.gap-8 > div {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.grid.md\\:grid-cols-2.gap-8 > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 45, 242, 0.2);
+}
+
+.bg-yellow-50 {
+    background: rgba(255, 255, 0, 0.1) !important;
+    border: 1px solid rgba(255, 255, 0, 0.2) !important;
+}
+
+.grid.md\\:grid-cols-2.gap-8 h3 {
+    color: var(--neon-green);
+    text-shadow: 0 0 8px rgba(57, 255, 20, 0.5);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.grid.md\\:grid-cols-2.gap-8 p.text-gray-700 {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.grid.md\\:grid-cols-2.gap-8 .text-sm.text-gray-600 {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.grid.md\\:grid-cols-2.gap-8 strong {
+    color: var(--neon-cyan);
+}
+
+/* === YEAR-WISE BREAKDOWN SECTION === */
+#year-wise-breakdown {
+    background: none !important;
+}
+
+#year-wise-breakdown h2 {
+    color: var(--neon-blue);
+    text-shadow: 0 0 15px rgba(0, 102, 255, 0.7);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+#year-wise-breakdown h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--neon-blue);
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.space-y-12 > .bg-white.rounded-xl {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+}
+
+.space-y-12 > .bg-white.rounded-xl h3 {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.data-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table thead {
+    border-bottom: 2px solid rgba(0, 234, 255, 0.3);
+}
+
+.data-table th {
+    color: var(--neon-cyan);
+    text-align: left;
+    padding: 1rem 0.5rem;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(0, 234, 255, 0.5);
+}
+
+.data-table th.text-center {
+    text-align: center;
+}
+
+.data-table tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.data-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.data-table td {
+    padding: 1rem 0.5rem;
+    color: var(--text-secondary);
+}
+
+.data-table td.font-medium {
+    color: var(--text-primary);
+}
+
+.data-table td.font-bold {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px rgba(0, 234, 255, 0.7);
+    font-weight: 600;
+}
+
+.data-table .text-red-600 {
+    color: #ff4444 !important;
+    text-shadow: 0 0 8px rgba(255, 68, 68, 0.7);
+}
+
+.data-table .text-orange-600 {
+    color: #ffa500 !important;
+    text-shadow: 0 0 8px rgba(255, 165, 0, 0.7);
+}
+
+.data-table .text-blue-600 {
+    color: var(--neon-blue) !important;
+    text-shadow: 0 0 8px rgba(0, 102, 255, 0.7);
+}
+
+.data-table .text-yellow-600 {
+    color: var(--neon-green) !important;
+    text-shadow: 0 0 8px rgba(57, 255, 20, 0.7);
+}
+
+.space-y-12 > .bg-white.rounded-xl p.text-sm {
+    color: var(--text-secondary);
+    margin-top: 1rem;
+}
+
+/* === EXAM PATTERN ANALYSIS SECTION === */
+#exam-pattern {
+    background: none !important;
+}
+
+#exam-pattern h2 {
+    color: var(--neon-green);
+    text-shadow: 0 0 15px rgba(57, 255, 20, 0.7);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+#exam-pattern h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--neon-green);
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
+.grid.lg\\:grid-cols-3.gap-8.mb-12 > div {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.grid.lg\\:grid-cols-3.gap-8.mb-12 > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(57, 255, 20, 0.2);
+}
+
+.bg-blue-50 {
+    background: rgba(0, 234, 255, 0.1) !important;
+    border: 1px solid rgba(0, 234, 255, 0.2) !important;
+}
+
+.bg-green-50 {
+    background: rgba(57, 255, 20, 0.1) !important;
+    border: 1px solid rgba(57, 255, 20, 0.2) !important;
+}
+
+.bg-purple-50 {
+    background: rgba(255, 45, 242, 0.1) !important;
+    border: 1px solid rgba(255, 45, 242, 0.2) !important;
+}
+
+.grid.lg\\:grid-cols-3.gap-8.mb-12 .w-12.h-12 {
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 15px rgba(0, 234, 255, 0.3);
+}
+
+.bg-blue-600 {
+    background: var(--neon-cyan) !important;
+    box-shadow: 0 0 15px var(--neon-cyan);
+}
+
+.bg-green-600 {
+    background: var(--neon-green) !important;
+    box-shadow: 0 0 15px var(--neon-green);
+}
+
+.bg-purple-600 {
+    background: var(--neon-magenta) !important;
+    box-shadow: 0 0 15px var(--neon-magenta);
+}
+
+.grid.lg\\:grid-cols-3.gap-8.mb-12 h3 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.grid.lg\\:grid-cols-3.gap-8.mb-12 .space-y-2 p {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.grid.lg\\:grid-cols-3.gap-8.mb-12 strong {
+    color: var(--neon-cyan);
+}
+
+.grid.lg\\:grid-cols-3.gap-8.mb-12 p.text-sm {
+    color: var(--text-secondary);
+    margin-top: 1rem;
+    font-size: 0.875rem;
+}
+
+/* Strategic Implications */
+#exam-pattern .insight-highlight {
+    background: linear-gradient(90deg, rgba(57, 255, 20, 0.15) 0%, transparent 100%);
+    border-left: 3px solid var(--neon-green);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.1);
+}
+
+#exam-pattern .insight-highlight h3 {
+    color: var(--neon-green);
+    text-shadow: 0 0 8px rgba(57, 255, 20, 0.5);
+}
+
+#exam-pattern .insight-highlight h4 {
+    color: var(--neon-cyan);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 8px rgba(0, 234, 255, 0.5);
+}
+
+#exam-pattern .insight-highlight ul {
+    color: var(--text-secondary);
+}
+
+#exam-pattern .insight-highlight li {
+    margin-bottom: 0.5rem;
+}
+
+/* === STRATEGIC IMPLICATIONS SECTION === */
+#strategic-implications {
+    background: none !important;
+}
+
+#strategic-implications h2 {
+    color: var(--neon-magenta);
+    text-shadow: 0 0 15px rgba(255, 45, 242, 0.7);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+#strategic-implications h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--neon-magenta);
+    box-shadow: 0 0 10px var(--neon-magenta);
+}
+
+.space-y-8 > div {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+}
+
+.space-y-8 h3 {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.space-y-6 .flex.items-start {
+    margin-bottom: 2rem;
+}
+
+.space-y-6 .w-8.h-8 {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 234, 255, 0.3);
+}
+
+.bg-red-600 {
+    background: #ff4444 !important;
+    box-shadow: 0 0 10px #ff4444;
+}
+
+.bg-yellow-500 {
+    background: #ffa500 !important;
+    box-shadow: 0 0 10px #ffa500;
+}
+
+.bg-green-600 {
+    background: var(--neon-green) !important;
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
+.space-y-6 h4 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.space-y-6 p.text-gray-700 {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.space-y-6 ul {
+    color: var(--text-secondary);
+    padding-left: 1rem;
+}
+
+.space-y-6 li {
+    margin-bottom: 0.25rem;
+}
+
+/* Performance Optimization */
+.bg-gradient-to-br.from-blue-50.to-indigo-50 {
+    background: linear-gradient(135deg, rgba(0, 234, 255, 0.1) 0%, rgba(255, 45, 242, 0.1) 100%) !important;
+    border: 1px solid rgba(0, 234, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 234, 255, 0.2);
+}
+
+.bg-gradient-to-br.from-blue-50.to-indigo-50 h3 {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+}
+
+.bg-gradient-to-br.from-blue-50.to-indigo-50 h4 {
+    color: var(--neon-blue);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 8px rgba(0, 102, 255, 0.5);
+}
+
+.bg-gradient-to-br.from-blue-50.to-indigo-50 .text-blue-900 {
+    color: var(--neon-blue) !important;
+}
+
+.bg-gradient-to-br.from-blue-50.to-indigo-50 .text-green-900 {
+    color: var(--neon-green) !important;
+}
+
+.bg-gradient-to-br.from-blue-50.to-indigo-50 ul.space-y-3 li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.bg-gradient-to-br.from-blue-50.to-indigo-50 .text-blue-600 {
+    color: var(--neon-cyan) !important;
+    margin-top: 0.25rem;
+}
+
+.bg-gradient-to-br.from-blue-50.to-indigo-50 .text-green-600 {
+    color: var(--neon-green) !important;
+    margin-top: 0.25rem;
+}
+
+.bg-gradient-to-br.from-blue-50.to-indigo-50 span {
+    color: var(--text-secondary);
+}
+
+/* Risk Mitigation */
+.space-y-8 .bg-white.rounded-xl .insight-highlight {
+    background: linear-gradient(90deg, rgba(255, 165, 0, 0.15) 0%, transparent 100%);
+    border-left: 3px solid #ffa500;
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.1);
+}
+
+.space-y-8 .bg-white.rounded-xl .insight-highlight h4 {
+    color: #ffa500;
+    text-shadow: 0 0 8px rgba(255, 165, 0, 0.5);
+}
+
+.grid.md\\:grid-cols-3.gap-6 .text-center i {
+    color: #ffa500;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+    margin-bottom: 1rem;
+}
+
+.grid.md\\:grid-cols-3.gap-6 .text-center h5 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.grid.md\\:grid-cols-3.gap-6 .text-center p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* === ABOUT SECTION STYLES === */
+#about-section {
+    background: none !important;
+    position: relative;
+    overflow: hidden;
+}
+
+#about-section h2 {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 15px rgba(0, 234, 255, 0.7);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+#about-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--neon-cyan);
+    box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.about-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(67, 97, 238, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(114, 9, 183, 0.3) 0%, transparent 50%);
+    z-index: -1;
+    animation: pulse 8s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.profile-container {
+    margin-bottom: 30px;
+}
+
+.profile-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(67, 97, 238, 0.5);
+    position: relative;
+    overflow: hidden;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.profile-circle::before {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: url("Screenshot_20251120-211059.png") center/cover no-repeat;
+}
+
+.hero-content {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards 0.5s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, var(--accent-cyan), var(--primary-blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.about-hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.about-bio {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.bio-icons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 0 15px rgba(67, 97, 238, 0.5);
+}
+
+.about-achievements {
+    position: relative;
+    overflow: hidden;
+    padding: 40px 0;
+}
+
+.achievements-slider {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+    scrollbar-width: none; /* Firefox */
+}
+
+.achievements-slider::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}
+
+.achievement-card {
+    min-width: 300px;
+    flex-shrink: 0;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: scale(1.05);
+}
+
+.achievement-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--accent-cyan);
+}
+
+.about-skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.skill-item {
+    margin-bottom: 25px;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.skill-bar {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(to right, var(--primary-blue), var(--accent-cyan));
+    transition: width 1.5s ease;
+    width: 0;
+}
+
+.skill-item:hover .skill-progress {
+    box-shadow: 0 0 10px var(--accent-cyan);
+}
+
+.about-purpose {
+    position: relative;
+    overflow: hidden;
+}
+
+.about-purpose::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(76, 201, 240, 0.1) 0%, transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(114, 9, 183, 0.1) 0%, transparent 30%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="molecules" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(76, 201, 240, 0.2)"/></pattern></defs><rect width="100" height="100" fill="url(%23molecules)"/></svg>');
+    z-index: -1;
+}
+
+.scientist-illustration {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 30px;
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(76, 201, 240, 0.3) 0%, transparent 70%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,10 L60,40 L80,40 L65,55 L70,85 L50,70 L30,85 L35,55 L20,40 L40,40 Z" fill="rgba(76, 201, 240, 0.5)"/></svg>') center/contain no-repeat;
+}
+
+.about-purpose-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* === FOOTER === */
+footer.bg-gray-900 {
+    background: rgba(10, 15, 36, 0.9) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(0, 234, 255, 0.2);
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+}
+
+footer h3 {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+footer p.text-gray-300 {
+    color: var(--text-secondary) !important;
+    margin-bottom: 2rem;
+}
+
+footer .grid.md\\:grid-cols-3.gap-6 h4 {
+    color: var(--neon-green);
+    text-shadow: 0 0 8px rgba(57, 255, 20, 0.5);
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+}
+
+footer ul.space-y-1 li {
+    margin-bottom: 0.5rem;
+}
+
+footer ul.space-y-1 a {
+    color: var(--text-secondary) !important;
+    transition: all 0.3s ease;
+}
+
+footer ul.space-y-1 a:hover {
+    color: var(--neon-cyan) !important;
+    text-shadow: 0 0 8px rgba(0, 234, 255, 0.7);
+}
+
+footer p.text-xs {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 1024px) {
+    .toc-fixed {
+        display: none;
+    }
+    
+    .content-offset {
+        margin-left: 0;
+    }
+    
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .relative.min-h-screen .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .relative.min-h-screen h1 {
+        font-size: 2.5rem;
+    }
+    
+    .relative.min-h-screen img {
+        height: 12rem;
+    }
+    
+    .grid.lg\\:grid-cols-3.gap-8,
+    .grid.md\\:grid-cols-2.gap-8 {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-hero p {
+        font-size: 1.2rem;
+    }
+    
+    .about-bio {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-circle {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .profile-circle::before {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+@media (max-width: 640px) {
+    .relative.min-h-screen h1 {
+        font-size: 2rem;
+    }
+    
+    .grid.md\\:grid-cols-3.gap-6 {
+        grid-template-columns: 1fr;
+    }
+    
+    footer .grid.md\\:grid-cols-3.gap-6 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* === SCROLL ANIMATIONS === */
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animations to sections */
+section:nth-child(odd) {
+    animation: slideInFromLeft 0.8s ease-out;
+}
+
+section:nth-child(even) {
+    animation: slideInFromRight 0.8s ease-out;
+}
+
+/* Card animations */
+.bg-white.rounded-xl,
+.grid.lg\\:grid-cols-3.gap-8 > div,
+.grid.md\\:grid-cols-2.gap-8 > div,
+.space-y-12 > div {
+    animation: slideInFromBottom 0.6s ease-out;
+}
+
+/* === SCROLL-BASED ANIMATIONS === */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-animate.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === SPECIAL EFFECTS FOR CHAPTERS === */
+/* Acids, Bases, Salts - Bubble Animation */
+#high-priority .bg-white.rounded-xl:nth-child(1)::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background-image: 
+        radial-gradient(circle at 30% 30%, rgba(255, 0, 0, 0.3) 0%, transparent 20%),
+        radial-gradient(circle at 70% 70%, rgba(0, 102, 255, 0.3) 0%, transparent 20%),
+        radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 20%);
+    background-size: 30px 30px;
+    animation: floatBubbles 10s infinite linear;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes floatBubbles {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+    100% { transform: translateY(0) rotate(360deg); }
+}
+
+/* Chemical Bonding - Orbital Animation */
+#high-priority .bg-white.rounded-xl:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    border: 2px solid rgba(0, 234, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px rgba(0, 234, 255, 0.2);
+    animation: rotateOrbit 15s infinite linear;
+    z-index: -1;
+    pointer-events: none;
+}
+
+#high-priority .bg-white.rounded-xl:nth-child(2)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    border: 2px solid rgba(255, 45, 242, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px rgba(255, 45, 242, 0.2);
+    animation: rotateOrbitReverse 12s infinite linear;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes rotateOrbit {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes rotateOrbitReverse {
+    from { transform: translate(-50%, -50%) rotate(360deg); }
+    to { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+/* Electrolysis - Electric Spark Animation */
+#high-priority .bg-white.rounded-xl:nth-child(4)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+    box-shadow: 0 0 10px var(--neon-cyan);
+    animation: electricSpark 3s infinite linear;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes electricSpark {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Carbon Compounds - Floating Rings */
+#medium-priority .grid.md\\:grid-cols-2.gap-8::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 30%, transparent 0%, transparent 10%, rgba(57, 255, 20, 0.1) 10%, rgba(57, 255, 20, 0.1) 12%, transparent 12%),
+        radial-gradient(circle at 80% 70%, transparent 0%, transparent 10%, rgba(0, 234, 255, 0.1) 10%, rgba(0, 234, 255, 0.1) 12%, transparent 12%),
+        radial-gradient(circle at 40% 80%, transparent 0%, transparent 10%, rgba(255, 45, 242, 0.1) 10%, rgba(255, 45, 242, 0.1) 12%, transparent 12%);
+    background-size: 100px 100px;
+    animation: floatRings 20s infinite linear;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes floatRings {
+    0% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-10px) translateX(10px); }
+    100% { transform: translateY(0) translateX(0); }
+}
+
+/* Study of Compounds - Scientist Animation */
+#high-priority .bg-white.rounded-xl:nth-child(1)::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 20%),
+        radial-gradient(circle at 70% 70%, rgba(0, 234, 255, 0.2) 0%, transparent 20%);
+    border-radius: 50%;
+    animation: floatScientist 15s infinite ease-in-out;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes floatScientist {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* === PARALLAX BACKGROUND EFFECTS === */
+.parallax-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    pointer-events: none;
+}
+
+.parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.layer-1 {
+    background: 
+        linear-gradient(90deg, transparent 98%, rgba(0, 234, 255, 0.05) 98%, transparent 100%),
+        linear-gradient(transparent 98%, rgba(0, 234, 255, 0.05) 98%, transparent 100%);
+    background-size: 50px 50px;
+    animation: parallaxScroll 100s infinite linear;
+}
+
+.layer-2 {
+    background: 
+        radial-gradient(circle at 20% 30%, transparent 0%, transparent 95%, rgba(57, 255, 20, 0.03) 95%, rgba(57, 255, 20, 0.03) 100%),
+        radial-gradient(circle at 80% 70%, transparent 0%, transparent 95%, rgba(255, 45, 242, 0.03) 95%, rgba(255, 45, 242, 0.03) 100%);
+    background-size: 200px 200px;
+    animation: parallaxScroll 80s infinite linear reverse;
+}
+
+.layer-3 {
+    background: 
+        linear-gradient(45deg, transparent 0%, transparent 94%, rgba(0, 102, 255, 0.02) 94%, rgba(0, 102, 255, 0.02) 96%, transparent 96%),
+        linear-gradient(-45deg, transparent 0%, transparent 94%, rgba(255, 165, 0, 0.02) 94%, rgba(255, 165, 0, 0.02) 96%, transparent 96%);
+    background-size: 100px 100px;
+    animation: parallaxScroll 60s infinite linear;
+}
+
+@keyframes parallaxScroll {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100%); }
+}
+
+/* Add parallax background to body */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300%;
+    background: 
+        linear-gradient(90deg, transparent 98%, rgba(0, 234, 255, 0.05) 98%, transparent 100%),
+        linear-gradient(transparent 98%, rgba(0, 234, 255, 0.05) 98%, transparent 100%);
+    background-size: 50px 50px;
+    z-index: -1;
+    animation: parallaxScroll 200s infinite linear;
+    pointer-events: none;
+}
+
+/* === ABOUT SECTION FADE-IN ANIMATIONS === */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+
+<script>
+// Scroll animation for sections
+document.addEventListener('DOMContentLoaded', function() {
+    // Section scroll animations
+    const sections = document.querySelectorAll('section');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+    
+    // Card scroll animations
+    const cards = document.querySelectorAll('.bg-white.rounded-xl, .grid.lg\\:grid-cols-3.gap-8 > div, .grid.md\\:grid-cols-2.gap-8 > div, .space-y-12 > div');
+    
+    const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    cards.forEach(card => {
+        card.classList.add('scroll-animate');
+        cardObserver.observe(card);
+    });
+    
+    // Enhanced smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                // Add slide transition effect
+                document.querySelectorAll('section').forEach(section => {
+                    section.style.opacity = '0';
+                    section.style.transform = 'translateY(20px)';
+                });
+                
+                setTimeout(() => {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Fade in the target section
+                    setTimeout(() => {
+                        target.style.opacity = '1';
+                        target.style.transform = 'translateY(0)';
+                    }, 300);
+                }, 200);
+            }
+        });
+    });
+    
+    // Highlight active section in TOC with enhanced effect
+    window.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.toc-fixed a[href^="#"]');
+        
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (scrollY >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('text-blue-600', 'font-semibold');
+            link.classList.add('text-gray-600');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.remove('text-gray-600');
+                link.classList.add('text-blue-600', 'font-semibold');
+                
+                // Add pulsing effect to active link
+                link.style.animation = 'pulseGlow 2s infinite';
+            } else {
+                link.style.animation = '';
+            }
+        });
+    });
+    
+    // Add CSS for pulsing glow animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes pulseGlow {
+            0% { text-shadow: 0 0 5px rgba(0, 234, 255, 0.7); }
+            50% { text-shadow: 0 0 15px rgba(0, 234, 255, 1), 0 0 20px rgba(0, 234, 255, 0.7); }
+            100% { text-shadow: 0 0 5px rgba(0, 234, 255, 0.7); }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // Add hover effects to cards
+    const allCards = document.querySelectorAll('.bg-white.rounded-xl, .grid.lg\\:grid-cols-3.gap-8 > div, .grid.md\\:grid-cols-2.gap-8 > div, .space-y-12 > div, .space-y-6 > div');
+    
+    allCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+            this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 234, 255, 0.3)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.2)';
+        });
+    });
+    
+    // Add glitch effect to buttons on hover
+    const buttons = document.querySelectorAll('a.citation-link, .toc-fixed a');
+    
+    buttons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+            this.style.animation = 'glitch 0.3s';
+        });
+        
+        button.addEventListener('mouseleave', function() {
+            this.style.animation = '';
+        });
+    });
+    
+    // Add CSS for glitch animation
+    const glitchStyle = document.createElement('style');
+    glitchStyle.textContent = `
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+    `;
+    document.head.appendChild(glitchStyle);
+
+    // About section animations
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    const aboutObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                
+                // Animate skill bars
+                if (entry.target.querySelector('.skill-progress')) {
+                    const skillBars = entry.target.querySelectorAll('.skill-progress');
+                    skillBars.forEach(bar => {
+                        const width = bar.getAttribute('data-width');
+                        setTimeout(() => {
+                            bar.style.width = width + '%';
+                        }, 200);
+                    });
+                }
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    fadeElements.forEach(element => {
+        aboutObserver.observe(element);
+    });
+
+    // Auto-scroll for achievements slider
+    const sliderContainer = document.querySelector('.achievements-slider');
+    let scrollAmount = 0;
+    let scrollDirection = 1;
+    
+    function autoScroll() {
+        if (sliderContainer) {
+            scrollAmount += scrollDirection * 1;
+            
+            if (scrollAmount >= sliderContainer.scrollWidth - sliderContainer.clientWidth) {
+                scrollDirection = -1;
+            } else if (scrollAmount <= 0) {
+                scrollDirection = 1;
+            }
+            
+            sliderContainer.scrollLeft = scrollAmount;
+        }
+        
+        requestAnimationFrame(autoScroll);
+    }
+    
+    // Start auto-scroll after page loads
+    window.addEventListener('load', () => {
+        setTimeout(autoScroll, 2000);
+    });
+});
+</script>
+    <base target="_blank">
+</head>
+
+<body class="bg-white">
+    <!-- Fixed Table of Contents -->
+    <nav class="toc-fixed">
+        <div class="mb-8">
+            <h3 class="font-tiempos text-lg font-bold text-gray-900 mb-4">Contents</h3>
+            <ul class="space-y-2 text-sm">
+                <li>
+                    <a href="#executive-summary" class="text-gray-600 hover:text-blue-600 transition-colors">Executive Summary</a>
+                </li>
+                <li>
+                    <a href="#consolidated-analysis" class="text-gray-600 hover:text-blue-600 transition-colors">Consolidated Analysis</a>
+                </li>
+                <li>
+                    <a href="#high-priority" class="text-gray-600 hover:text-blue-600 transition-colors">High-Priority Chapters</a>
+                </li>
+                <li>
+                    <a href="#medium-priority" class="text-gray-600 hover:text-blue-600 transition-colors">Medium-Priority Chapters</a>
+                </li>
+                <li>
+                    <a href="#year-wise-breakdown" class="text-gray-600 hover:text-blue-600 transition-colors">Year-Wise Breakdown</a>
+                </li>
+                <li>
+                    <a href="#exam-pattern" class="text-gray-600 hover:text-blue-600 transition-colors">Exam Pattern Analysis</a>
+                </li>
+                <li>
+                    <a href="#strategic-implications" class="text-gray-600 hover:text-blue-600 transition-colors">Strategic Implications</a>
+                </li>
+                <li>
+                    <a href="#about-section" class="text-gray-600 hover:text-blue-600 transition-colors">About the Developer</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mt-8 pt-8 border-t border-gray-200">
+            <h4 class="font-semibold text-xs uppercase tracking-wide text-gray-500 mb-3">Key Insights</h4>
+            <div class="space-y-3 text-xs text-gray-600">
+                <div class="flex items-center space-x-2">
+                    <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    <span>Consistent 80-mark paper structure</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <div class="w-2 h-2 bg-amber-500 rounded-full"></div>
+                    <span>Four chapters dominate ~70% of marks</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content-offset">
+        <!-- Hero Section with Bento Layout -->
+        <section class="relative min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+            <div class="container mx-auto px-8 py-16">
+                <div class="bento-grid">
+                    <!-- Main Content Area -->
+                    <div class="space-y-8">
+                        <div class="relative">
+                            <div class="hero-overlay absolute inset-0 rounded-2xl"></div>
+                            <img src="https://kimi-web-img.moonshot.cn/img/www.payette.com/b045151c821253c2e51b934fced528ed07b09d7d.jpg" alt="Chemistry laboratory" class="w-full h-64 object-cover rounded-2xl" size="medium" aspect="wide" style="photo" query="chemistry laboratory" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+                            <div class="relative z-10 p-8 text-white">
+                                <h1 class="font-tiempos text-5xl font-bold leading-tight mb-4">
+                                    <em class="italic">Decoding Excellence:</em>
+                                    <br/>
+                                    ICSE Class 10 Chemistry
+                                    <br/>
+                                    Strategic Analysis 2017-2025(by Ishaan Panda)
+                                </h1>
+                                <p class="text-xl opacity-90 max-w-2xl">
+                                    A comprehensive examination of chapter weightage patterns and strategic insights
+                                    for optimized examination preparation.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+                            <h2 id="executive-summary" class="font-tiempos text-2xl font-bold mb-6 text-gray-900">Executive Summary</h2>
+                            <div class="prose prose-lg max-w-none">
+                                <p class="text-gray-700 mb-6">
+                                    Based on a comprehensive analysis of ICSE Class 10 Chemistry papers from 2017 to 2025,
+                                    four critical chapters emerge as the cornerstone of examination success:
+                                    <strong>Study of Compounds</strong>, <strong>Organic Chemistry</strong>,
+                                    <strong>Mole Concept and Stoichiometry</strong>, and
+                                    <strong>Study of Acids, Bases, and Salts</strong>.
+                                </p>
+
+                                <div class="insight-highlight">
+                                    <h3 class="font-semibold text-lg mb-3 text-amber-800">Strategic Imperative</h3>
+                                    <p class="text-gray-800">
+                                        These four chapters consistently account for <strong>60-70% of the 80-mark theory paper</strong>,
+                                        making them non-negotiable focal points for any student aiming for excellence in the
+                                        ICSE Chemistry examination.
+                                    </p>
+                                </div>
+
+                                <p class="text-gray-700">
+                                    The examination pattern has demonstrated remarkable stability over the analyzed period,
+                                    maintaining a consistent structure of compulsory Section A (40 marks) with short-answer questions
+                                    and choice-based Section B (40 marks) with long-answer questions. This predictable framework
+                                    provides students with a reliable foundation for strategic preparation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Insights -->
+                    <div class="space-y-6">
+                        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                            <h3 class="font-semibold text-lg mb-4 text-gray-900">Key Findings</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                        <i class="fas fa-chart-line text-blue-600 text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900">Consistent Patterns</h4>
+                                        <p class="text-sm text-gray-600">Stable weightage distribution across years</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                        <i class="fas fa-target text-amber-600 text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900">Strategic Focus</h4>
+                                        <p class="text-sm text-gray-600">Four high-priority chapters dominate scoring</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                        <i class="fas fa-clock text-green-600 text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900">Time Efficiency</h4>
+                                        <p class="text-sm text-gray-600">Optimized study allocation recommended</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100">
+                            <h3 class="font-semibold text-lg mb-3 text-gray-900">Research Methodology</h3>
+                            <p class="text-sm text-gray-700 mb-3">
+                                Analysis based on <a href="https://www.jagranjosh.com/articles/icse-class-10-chemistry-exam-pattern-with-marking-scheme-1732020130-1" class="citation-link">previous years' question papers</a>
+                                and <a href="https://www.collegedekho.com/news/icse-class-10-chemistry-weightage-2025-unit-and-chapter-wise-marks-distribution-60649/" class="citation-link">specimen papers</a>
+                                from multiple educational platforms.
+                            </p>
+                            <p class="text-xs text-gray-500">
+                                Note: CISCE does not officially release chapter-wise breakdowns; all data represents expert analysis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consolidated Analysis -->
+        <section id="consolidated-analysis" class="py-16 bg-white">
+            <div class="container mx-auto px-8">
+                <h2 class="font-tiempos text-3xl font-bold mb-12 text-center text-gray-900">Consolidated Chapter-Wise Weightage Analysis</h2>
+
+                <div class="grid lg:grid-cols-3 gap-8 mb-16">
+                    <div class="bg-red-50 rounded-xl p-6 border border-red-100">
+                        <h3 class="font-tiempos text-xl font-bold mb-4 text-red-900">High-Priority</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium text-gray-900">Study of Compounds</span>
+                                <span class="font-bold text-red-700">20-30 marks</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium text-gray-900">Organic Chemistry</span>
+                                <span class="font-bold text-red-700">12-15 marks</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium text-gray-900">Mole Concept</span>
+                                <span class="font-bold text-red-700">10-12 marks</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium text-gray-900">Acids, Bases &amp; Salts</span>
+                                <span class="font-bold text-red-700">6-12 marks</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 rounded-xl p-6 border border-yellow-100">
+                        <h3 class="font-tiempos text-xl font-bold mb-4 text-yellow-900">Medium-Priority</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium text-gray-900">Periodic Properties</span>
+                                <span class="font-bold text-yellow-700">10-12 marks</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium text-gray-900">Metallurgy</span>
+                                <span class="font-bold text-yellow-700">5-10 marks</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium text-gray-900">Electrolysis</span>
+                                <span class="font-bold text-yellow-700">6-10 marks</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium text-gray-900">Chemical Bonding</span>
+                                <span class="font-bold text-yellow-700">6-8 marks</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-50 rounded-xl p-6 border border-green-100">
+                        <h3 class="font-tiempos text-xl font-bold mb-4 text-green-900">Lower-Priority</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium text-gray-900">Analytical Chemistry</span>
+                                <span class="font-bold text-green-700">3-6 marks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- High-Priority Chapters -->
+        <section id="high-priority" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-8">
+                <h2 class="font-tiempos text-3xl font-bold mb-12 text-center text-gray-900">High-Priority Chapters: Strategic Deep Dive</h2>
+
+                <div class="space-y-12">
+                    <!-- Study of Compounds -->
+                    <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+                        <div class="flex items-start space-x-6">
+                            <div class="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-flask text-red-600 text-xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-tiempos text-2xl font-bold mb-4 text-gray-900">1. Study of Compounds</h3>
+                                <div class="flex items-center space-x-4 mb-4">
+                                    <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-semibold">20-30 marks</span>
+                                    <span class="text-gray-500">Consistently highest weightage</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">
+                                    The most critical unit covering industrially important compounds: Hydrogen Chloride, Ammonia, Nitric Acid, and Sulphuric Acid. The <a href="https://news.getmyuni.com/icse-10th-chemistry-blue-print-2025-check-chapter-wise-weightage" class="citation-link">2025 analysis</a> projects 20 marks for this unit, while <a href="https://www.jagranjosh.com/articles/icse-class-10-chemistry-last-minute-tips-and-resources-1679124883-1" class="citation-link">2023 data</a> shows "Ammonia" alone accounting for 11 marks.
+                                </p>
+
+                                <div class="insight-highlight">
+                                    <h4 class="font-semibold mb-2">Key Focus Areas:</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                        <li>Laboratory and industrial preparation methods</li>
+                                        <li>Physical and chemical properties with balanced equations</li>
+                                        <li>Detailed diagrammatic representations of apparatus</li>
+                                        <li>Industrial applications and reaction conditions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Organic Chemistry -->
+                    <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+                        <div class="flex items-start space-x-6">
+                            <div class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-atom text-orange-600 text-xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-tiempos text-2xl font-bold mb-4 text-gray-900">2. Organic Chemistry</h3>
+                                <div class="flex items-center space-x-4 mb-4">
+                                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-semibold">12-15 marks</span>
+                                    <span class="text-gray-500">Foundation for advanced studies</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">
+                                    A cornerstone chapter introducing carbon-based compounds. <a href="https://news.getmyuni.com/icse-10th-chemistry-blue-print-2025-check-chapter-wise-weightage" class="citation-link">2025 projections</a> indicate 15 marks, consistent with <a href="https://www.jagranjosh.com/articles/icse-class-10-chemistry-last-minute-tips-and-resources-1679124883-1" class="citation-link">2023 performance</a> of 15 marks.
+                                </p>
+
+                                <div class="insight-highlight">
+                                    <h4 class="font-semibold mb-2">Critical Concepts:</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                        <li>Nomenclature and homologous series</li>
+                                        <li>Functional groups and isomerism</li>
+                                        <li>Reactions: addition, substitution, oxidation</li>
+                                        <li>Structural formulas and IUPAC naming</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mole Concept and Stoichiometry -->
+                    <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+                        <div class="flex items-start space-x-6">
+                            <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-calculator text-blue-600 text-xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-tiempos text-2xl font-bold mb-4 text-gray-900">3. Mole Concept and Stoichiometry</h3>
+                                <div class="flex items-center space-x-4 mb-4">
+                                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">10-12 marks</span>
+                                    <span class="text-gray-500">Quantitative chemistry foundation</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">
+                                    The mathematical framework for chemical calculations. <a href="https://news.getmyuni.com/icse-10th-chemistry-blue-print-2025-check-chapter-wise-weightage" class="citation-link">2025 analysis</a> projects 12 marks, building on consistent performance of 10-12 marks in previous years.
+                                </p>
+
+                                <div class="insight-highlight">
+                                    <h4 class="font-semibold mb-2">Essential Skills:</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                        <li>Mole concept and Avogadro's number applications</li>
+                                        <li>Empirical and molecular formula calculations</li>
+                                        <li>Stoichiometric problem-solving</li>
+                                        <li>Limiting reagent and percentage yield</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Acids, Bases and Salts -->
+                    <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+                        <div class="flex items-start space-x-6">
+                            <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-vial text-purple-600 text-xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-tiempos text-2xl font-bold mb-4 text-gray-900">4. Study of Acids, Bases, and Salts</h3>
+                                <div class="flex items-center space-x-4 mb-4">
+                                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">6-12 marks</span>
+                                    <span class="text-gray-500">Fundamental inorganic chemistry</span>
+                                </div>
+                                <p class="text-gray-700 mb-4">
+                                    Foundational chapter for understanding chemical behavior. <a href="https://news.getmyuni.com/icse-10th-chemistry-blue-print-2025-check-chapter-wise-weightage" class="citation-link">2025 projections</a> show 12 marks, with consistent moderate-to-high weightage across years.
+                                </p>
+
+                                <div class="insight-highlight">
+                                    <h4 class="font-semibold mb-2">Core Topics:</h4>
+                                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                        <li>Acid-base definitions and pH scale</li>
+                                        <li>Neutralization reactions and salt formation</li>
+                                        <li>Properties and uses of common salts</li>
+                                        <li>Indicator behavior and water of crystallization</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medium-Priority Chapters -->
+        <section id="medium-priority" class="py-16 bg-white">
+            <div class="container mx-auto px-8">
+                <h2 class="font-tiempos text-3xl font-bold mb-12 text-center text-gray-900">Medium-Priority Chapters: Supporting Pillars</h2>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-yellow-50 rounded-xl p-6 border border-yellow-100">
+                        <h3 class="font-tiempos text-xl font-bold mb-3 text-yellow-900">Periodic Properties</h3>
+                        <p class="text-gray-700 mb-3">Periodic Properties and Variations consistently receives 10-12 marks, covering modern periodic law and trends in atomic properties. <a href="https://news.getmyuni.com/icse-10th-chemistry-blue-print-2025-check-chapter-wise-weightage" class="citation-link">2025 projections</a> indicate 10 marks.</p>
+                        <div class="text-sm text-gray-600">
+                            <strong>Key Focus:</strong> Atomic size trends, ionization energy, electron affinity, electronegativity
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 rounded-xl p-6 border border-yellow-100">
+                        <h3 class="font-tiempos text-xl font-bold mb-3 text-yellow-900">Metallurgy</h3>
+                        <p class="text-gray-700 mb-3">Metallurgy carries 5-10 marks, focusing on metal extraction processes and industrial applications. <a href="https://news.getmyuni.com/icse-10th-chemistry-blue-print-2025-check-chapter-wise-weightage" class="citation-link">2025 analysis</a> projects 10 marks.</p>
+                        <div class="text-sm text-gray-600">
+                            <strong>Key Focus:</strong> Extraction processes, reactivity series, specific case studies (Al, Fe, Zn)
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 rounded-xl p-6 border border-yellow-100">
+                        <h3 class="font-tiempos text-xl font-bold mb-3 text-yellow-900">Electrolysis</h3>
+                        <p class="text-gray-700 mb-3">Electrolysis receives 6-10 marks, covering ion discharge mechanisms and industrial applications. <a href="https://news.getmyuni.com/icse-10th-chemistry-blue-print-2025-check-chapter-wise-weightage" class="citation-link">2025 projections</a> show 8 marks.</p>
+                        <div class="text-sm text-gray-600">
+                            <strong>Key Focus:</strong> Electrode reactions, preferential discharge, industrial applications
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 rounded-xl p-6 border border-yellow-100">
+                        <h3 class="font-tiempos text-xl font-bold mb-3 text-yellow-900">Chemical Bonding</h3>
+                        <p class="text-gray-700 mb-3">Chemical Bonding consistently receives 6-8 marks, explaining atomic combination mechanisms. <a href="https://news.getmyuni.com/icse-10th-chemistry-blue-print-2025-check-chapter-wise-weightage" class="citation-link">2025 analysis</a> indicates 8 marks.</p>
+                        <div class="text-sm text-gray-600">
+                            <strong>Key Focus:</strong> Ionic and covalent bonding, electron dot structures, property correlations
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Year-Wise Breakdown -->
+        <section id="year-wise-breakdown" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-8">
+                <h2 class="font-tiempos text-3xl font-bold mb-12 text-center text-gray-900">Year-Wise Marks Distribution</h2>
+
+                <div class="space-y-12">
+                    <!-- 2025 -->
+                    <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+                        <h3 class="font-tiempos text-2xl font-bold mb-6 text-gray-900">ICSE 2025: Projected Weightage</h3>
+                        <div class="data-table">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="border-b border-gray-200">
+                                        <th class="text-left py-3 font-semibold">Chapter</th>
+                                        <th class="text-center py-3 font-semibold">Weightage (Marks)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-100">
+                                    <tr>
+                                        <td class="py-3 font-medium">Study of Compounds</td>
+                                        <td class="py-3 text-center font-bold text-red-600">20</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 font-medium">Organic Chemistry</td>
+                                        <td class="py-3 text-center font-bold text-orange-600">15</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 font-medium">Mole Concept and Stoichiometry</td>
+                                        <td class="py-3 text-center font-bold text-blue-600">12</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 font-medium">Study of Acids, Bases and Salts</td>
+                                        <td class="py-3 text-center font-bold text-purple-600">12</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-4">
+                            Source: <a href="https://news.getmyuni.com/icse-10th-chemistry-blue-print-2025-check-chapter-wise-weightage" class="citation-link">GetMyUni 2025 Analysis</a>
+                        </p>
+                    </div>
+
+                    <!-- 2023 -->
+                    <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+                        <h3 class="font-tiempos text-2xl font-bold mb-6 text-gray-900">ICSE 2023: Actual Performance</h3>
+                        <div class="data-table">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="border-b border-gray-200">
+                                        <th class="text-left py-3 font-semibold">Chapter</th>
+                                        <th class="text-center py-3 font-semibold">Weightage (Marks)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-100">
+                                    <tr>
+                                        <td class="py-3 font-medium">Organic Chemistry</td>
+                                        <td class="py-3 text-center font-bold text-orange-600">15</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 font-medium">Ammonia (Study of Compounds)</td>
+                                        <td class="py-3 text-center font-bold text-red-600">11</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 font-medium">Mole Concept and Stoichiometry</td>
+                                        <td class="py-3 text-center font-bold text-blue-600">10</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 font-medium">Periodic Properties</td>
+                                        <td class="py-3 text-center font-bold text-yellow-600">10</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-4">
+                            Source: <a href="https://www.jagranjosh.com/articles/icse-class-10-chemistry-last-minute-tips-and-resources-1679124883-1" class="citation-link">Jagran Josh 2023 Analysis</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exam Pattern Analysis -->
+        <section id="exam-pattern" class="py-16 bg-white">
+            <div class="container mx-auto px-8">
+                <h2 class="font-tiempos text-3xl font-bold mb-12 text-center text-gray-900">Exam Pattern Analysis</h2>
+
+                <div class="grid lg:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-blue-50 rounded-xl p-6 border border-blue-100">
+                        <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-clipboard-list text-white"></i>
+                        </div>
+                        <h3 class="font-tiempos text-xl font-bold mb-3 text-gray-900">Total Structure</h3>
+                        <div class="space-y-2 text-gray-700">
+                            <p><strong>Theory Paper:</strong> 80 marks</p>
+                            <p><strong>Internal Assessment:</strong> 20 marks</p>
+                            <p><strong>Total:</strong> 100 marks</p>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-3">
+                            <a href="https://www.21kschool.com/id/blog/icse-marking-scheme/" class="citation-link">As per CISCE guidelines</a>
+                        </p>
+                    </div>
+
+                    <div class="bg-green-50 rounded-xl p-6 border border-green-100">
+                        <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-check-circle text-white"></i>
+                        </div>
+                        <h3 class="font-tiempos text-xl font-bold mb-3 text-gray-900">Section A: Compulsory</h3>
+                        <div class="space-y-2 text-gray-700">
+                            <p><strong>Marks:</strong> 40</p>
+                            <p><strong>Format:</strong> Short-answer questions</p>
+                            <p><strong>Coverage:</strong> Entire syllabus</p>
+                            <p><strong>All questions mandatory</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="bg-purple-50 rounded-xl p-6 border border-purple-100">
+                        <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-balance-scale text-white"></i>
+                        </div>
+                        <h3 class="font-tiempos text-xl font-bold mb-3 text-gray-900">Section B: Choice-Based</h3>
+                        <div class="space-y-2 text-gray-700">
+                            <p><strong>Marks:</strong> 40</p>
+                            <p><strong>Format:</strong> Long-answer questions</p>
+                            <p><strong>Choice:</strong> 4 out of 6 questions</p>
+                            <p><strong>Higher difficulty level</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insight-highlight">
+                    <h3 class="font-tiempos text-xl font-bold mb-4 text-amber-800">Strategic Implications of Exam Pattern</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-2">Section A Strategy</h4>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                <li>Comprehensive syllabus coverage essential</li>
+                                <li>Focus on fundamental concepts and definitions</li>
+                                <li>Practice speed and accuracy for short answers</li>
+                                <li>Guaranteed 40 marks - maximize this section</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Section B Strategy</h4>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                <li>Deep dive into high-priority chapters</li>
+                                <li>Practice long-answer writing skills</li>
+                                <li>Master diagrams and numerical problems</li>
+                                <li>Choose questions based on strength areas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategic Implications -->
+        <section id="strategic-implications" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-8">
+                <h2 class="font-tiempos text-3xl font-bold mb-12 text-center text-gray-900">Strategic Implications for Students</h2>
+
+                <div class="space-y-8">
+                    <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+                        <h3 class="font-tiempos text-2xl font-bold mb-6 text-gray-900">Priority-Based Study Timeline</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">1</div>
+                                <div>
+                                    <h4 class="font-semibold text-lg mb-2">High-Priority Phase (60% time)</h4>
+                                    <p class="text-gray-700 mb-2">Focus on the four critical chapters that consistently deliver 60-70% of marks:</p>
+                                    <ul class="list-disc list-inside space-y-1 text-gray-600">
+                                        <li>Study of Compounds (20-30 marks)</li>
+                                        <li>Organic Chemistry (12-15 marks)</li>
+                                        <li>Mole Concept and Stoichiometry (10-12 marks)</li>
+                                        <li>Study of Acids, Bases, and Salts (6-12 marks)</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">2</div>
+                                <div>
+                                    <h4 class="font-semibold text-lg mb-2">Medium-Priority Phase (30% time)</h4>
+                                    <p class="text-gray-700 mb-2">Cover supporting chapters that provide 20-25% of marks:</p>
+                                    <ul class="list-disc list-inside space-y-1 text-gray-600">
+                                        <li>Periodic Properties (10-12 marks)</li>
+                                        <li>Metallurgy (5-10 marks)</li>
+                                        <li>Electrolysis (6-10 marks)</li>
+                                        <li>Chemical Bonding (6-8 marks)</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">3</div>
+                                <div>
+                                    <h4 class="font-semibold text-lg mb-2">Lower-Priority Phase (10% time)</h4>
+                                    <p class="text-gray-700 mb-2">Quick coverage of remaining chapters for completeness:</p>
+                                    <ul class="list-disc list-inside space-y-1 text-gray-600">
+                                        <li>Analytical Chemistry (3-6 marks)</li>
+                                        <li>Revision and practice papers</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-100">
+                        <h3 class="font-tiempos text-2xl font-bold mb-6 text-gray-900">Performance Optimization Strategies</h3>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="font-semibold text-lg mb-4 text-blue-900">For High-Achieving Students</h4>
+                                <ul class="space-y-3 text-gray-700">
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-star text-blue-600 mt-1 flex-shrink-0"></i>
+                                        <span>Master all high-priority chapters thoroughly</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-star text-blue-600 mt-1 flex-shrink-0"></i>
+                                        <span>Develop expertise in medium-priority areas</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-star text-blue-600 mt-1 flex-shrink-0"></i>
+                                        <span>Practice complex numerical problems</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-star text-blue-600 mt-1 flex-shrink-0"></i>
+                                        <span>Focus on application-based questions</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold text-lg mb-4 text-green-900">For Grade-Focused Students</h4>
+                                <ul class="space-y-3 text-gray-700">
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-target text-green-600 mt-1 flex-shrink-0"></i>
+                                        <span>Focus exclusively on four high-priority chapters</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-target text-green-600 mt-1 flex-shrink-0"></i>
+                                        <span>Ensure complete mastery of Section A</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-target text-green-600 mt-1 flex-shrink-0"></i>
+                                        <span>Select choice questions strategically</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <i class="fas fa-target text-green-600 mt-1 flex-shrink-0"></i>
+                                        <span>Maximize marks from high-weightage areas</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+                        <h3 class="font-tiempos text-2xl font-bold mb-6 text-gray-900">Risk Mitigation</h3>
+                        <div class="insight-highlight">
+                            <h4 class="font-semibold mb-3">Critical Success Factors</h4>
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <div class="text-center">
+                                    <i class="fas fa-clock text-3xl text-amber-600 mb-3"></i>
+                                    <h5 class="font-semibold mb-2">Time Management</h5>
+                                    <p class="text-sm text-gray-600">Two-hour exam requires strategic time allocation between sections</p>
+                                </div>
+                                <div class="text-center">
+                                    <i class="fas fa-chart-line text-3xl text-amber-600 mb-3"></i>
+                                    <h5 class="font-semibold mb-2">Practice Focus</h5>
+                                    <p class="text-sm text-gray-600">Regular practice with previous years' papers essential for pattern recognition</p>
+                                </div>
+                                <div class="text-center">
+                                    <i class="fas fa-balance-scale text-3xl text-amber-600 mb-3"></i>
+                                    <h5 class="font-semibold mb-2">Balance Approach</h5>
+                                    <p class="text-sm text-gray-600">Combine depth in high-priority areas with breadth across syllabus</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about-section" class="py-16 bg-white">
+            <div class="container mx-auto px-8">
+                <h2 class="font-tiempos text-3xl font-bold mb-12 text-center text-gray-900">About the Developer</h2>
+
+                <!-- Hero Section -->
+                <div class="about-hero">
+                    <div class="container">
+                        <div class="profile-container">
+                            <div class="profile-circle"></div>
+                        </div>
+                        <div class="hero-content">
+                            <h1>About the Developer</h1>
+                            <p>Ishaan Panda — Student Developer & Designer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bio Section -->
+                <div class="glass-panel about-bio fade-in">
+                    <div class="bio-content">
+                        <div class="bio-icons">
+                            <div class="icon-circle">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="icon-circle">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="icon-circle">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                        </div>
+                        <h2>Short Bio</h2>
+                        <p>
+                            I'm a Class 10 ICSE student with a passion for technology, science, and creative problem-solving. 
+                            When I'm not studying for exams, I'm developing websites, exploring Java programming, 
+                            and preparing for the SAT. I believe in using technology to make complex subjects more 
+                            accessible and engaging for students everywhere.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Achievements Section -->
+                <div class="about-achievements container fade-in">
+                    <h2 style="text-align: center; margin-bottom: 40px;">My Achievements</h2>
+                    <div class="achievements-slider">
+                        <div class="glass-panel achievement-card">
+                            <div class="achievement-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3>2400-Line Website</h3>
+                            <p>Developed a comprehensive educational website with over 2400 lines of code, featuring interactive elements and responsive design.</p>
+                        </div>
+                        <div class="glass-panel achievement-card">
+                            <div class="achievement-icon">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <h3>ICSE Computer Applications</h3>
+                            <p>Mastered Java programming through the ICSE curriculum, building various applications and problem-solving algorithms.</p>
+                        </div>
+                        <div class="glass-panel achievement-card">
+                            <div class="achievement-icon">
+                                <i class="fas fa-atom"></i>
+                            </div>
+                            <h3>Science Knowledge</h3>
+                            <p>Developed a deep understanding of chemistry and physics concepts, applying them to create educational resources.</p>
+                        </div>
+                        <div class="glass-panel achievement-card">
+                            <div class="achievement-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h3>UI/UX Design</h3>
+                            <p>Created visually appealing and user-friendly interfaces with modern design principles and smooth animations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Section -->
+                <div class="container fade-in">
+                    <h2 style="text-align: center; margin-bottom: 40px;">My Skills</h2>
+                    <div class="about-skills-container">
+                        <div class="glass-panel">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span>HTML/CSS</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span>Java</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span>JavaScript</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="75"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-panel">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span>ICSE Computer Apps</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span>Science Concepts</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="88"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span>UI/UX Design</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="80"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Purpose Section -->
+                <div class="about-purpose container fade-in">
+                    <div class="scientist-illustration"></div>
+                    <div class="glass-panel about-purpose-content">
+                        <h2>Why I Made This Website</h2>
+                        <p>
+                            As a student navigating the ICSE curriculum, I noticed how challenging chemistry concepts could be for many of my peers. 
+                            I created this comprehensive analysis website to transform complex data into actionable insights, helping students 
+                            focus their efforts where it matters most. By combining my programming skills with my understanding of science education, 
+                            I aim to make learning more efficient, accessible, and engaging for everyone.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-12">
+            <div class="container mx-auto px-8">
+                <div class="text-center">
+                    <h3 class="font-tiempos text-2xl font-bold mb-4">Research Methodology &amp; Data Sources</h3>
+                    <p class="text-gray-300 mb-6 max-w-3xl mx-auto">
+                        This analysis is based on comprehensive review of ICSE Class 10 Chemistry examination papers
+                        and educational platform analyses from 2017-2025. All weightage data represents expert analysis
+                        as CISCE does not officially release chapter-wise breakdowns.
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-6 text-sm">
+                        <div>
+                            <h4 class="font-semibold mb-2">Primary Sources</h4>
+                            <ul class="space-y-1 text-gray-400">
+                                <li>
+                                    <a href="https://news.getmyuni.com/icse-10th-chemistry-blue-print-2025-check-chapter-wise-weightage" class="citation-link">GetMyUni 2025 Analysis</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.jagranjosh.com/articles/icse-class-10-chemistry-last-minute-tips-and-resources-1679124883-1" class="citation-link">Jagran Josh 2023 Analysis</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.collegedekho.com/news/icse-class-10-chemistry-chapter-wise-weightage-2024-45992/" class="citation-link">CollegeDekho 2024 Analysis</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Exam Pattern</h4>
+                            <ul class="space-y-1 text-gray-400">
+                                <li>
+                                    <a href="https://www.21kschool.com/id/blog/icse-marking-scheme/" class="citation-link">CISCE Marking Scheme</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.pw.live/school-prep/exams/icse-class-10-chemistry-weightage-2025" class="citation-link">PW Live Exam Pattern</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.jagranjosh.com/articles/icse-class-10-chemistry-exam-analysis-2025-with-answer-key-1742541195-1" class="citation-link">2025 Exam Analysis</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Disclaimer</h4>
+                            <p class="text-gray-400 text-xs">
+                                This analysis is for educational guidance only. Actual examination patterns
+                                may vary. Students should verify with official CISCE resources.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
